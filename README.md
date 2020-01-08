@@ -1,1 +1,1 @@
-# Rosalind-solutions-with-python
+# Rosalind-solutions
