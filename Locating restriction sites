@@ -1,7 +1,26 @@
 """Define a function for reverse complement of sequences"""
 
 def reverse_complement(seq):
-  complements = {'A':'T','T':'A','C':'G','G':'C'}
-  return ''.join(complements[base] for base in reversed(seq))
+    complements = {'A':'T','T':'A','C':'G','G':'C'}
+    return ''.join([complements[base] for base in reversed(seq)]
  
+def palindromes(seq):
+    records = []
+    for i in range(len(seq)-3):
+        for site in range(4,9):
+            if seq[i:i+site] == reverse_complement(seq[i:i+site]):
+                if i + site > len(seq):
+                    break
+                position = str(i+1) + ' ' + str(site)
+                records.append(position)
+     return records
  
+ with open('/Users/bszg/Downloads/rosalind.revp1.txt', 'r') as file:
+    content = file.read()
+    
+seq = ''
+for i in range(1,len(content.splitlines()))
+    seq = content.splitlines()[i]
+record = restiction(seq)
+for positions in records:
+    print(positions)
